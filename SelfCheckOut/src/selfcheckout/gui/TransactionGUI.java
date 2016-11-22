@@ -20,8 +20,8 @@ import javax.swing.text.StyledDocument;
  */
 public class TransactionGUI extends javax.swing.JFrame 
 {
-    DairyGUI dg = new DairyGUI(this);
     SearchResultGUI sr = new SearchResultGUI(this);
+    ProductGUI pg;
     StyledDocument doc;
     StyledDocument prc;
     String word;
@@ -29,13 +29,6 @@ public class TransactionGUI extends javax.swing.JFrame
     /**
      * Creates new form TransactionGUI
      */
-    public TransactionGUI(DairyGUI dg) {
-        initComponents();
-        this.dg = dg;
-        //Changes the background color of the main screen
-        Container content = this.getContentPane();
-        content.setBackground(Color.gray);
-    }
     
     public TransactionGUI(SearchResultGUI sr) {
         initComponents();
@@ -285,28 +278,37 @@ public class TransactionGUI extends javax.swing.JFrame
     private void dairyButtonActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_dairyButtonActionPerformed
     {//GEN-HEADEREND:event_dairyButtonActionPerformed
         // TODO add your handling code here:
-        dg.setVisible(true);
-        
+        pg = new ProductGUI(this, "Dairy");
+        pg.setVisible(true);
     }//GEN-LAST:event_dairyButtonActionPerformed
 
     private void frozenButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_frozenButtonActionPerformed
         // TODO add your handling code here:
+        pg = new ProductGUI(this, "Frozen");
+        pg.setVisible(true);
     }//GEN-LAST:event_frozenButtonActionPerformed
 
     private void produceButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_produceButtonActionPerformed
         // TODO add your handling code here:
+        pg = new ProductGUI(this, "Produce");
+        pg.setVisible(true);
     }//GEN-LAST:event_produceButtonActionPerformed
 
     private void alcoholtobaccoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_alcoholtobaccoButtonActionPerformed
         // TODO add your handling code here:
+        pg = new ProductGUI(this, "Alcohol/Tobacco");
+        pg.setVisible(true);
     }//GEN-LAST:event_alcoholtobaccoButtonActionPerformed
 
     private void meatButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_meatButtonActionPerformed
         // TODO add your handling code here:
+        pg = new ProductGUI(this, "Meat");
+        pg.setVisible(true);
     }//GEN-LAST:event_meatButtonActionPerformed
 
     private void helpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_helpButtonActionPerformed
         // TODO add your handling code here:
+
     }//GEN-LAST:event_helpButtonActionPerformed
 
     //Public method to add items to the cart
